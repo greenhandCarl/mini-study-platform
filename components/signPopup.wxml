@@ -1,0 +1,12 @@
+<!--components/signPopup.wxml-->
+<view class='sign-popup-container' wx:if='{{isShowSign}}'>
+  <view class='sign-popup-box'>
+    <view class='title'>您还未登录</view>
+    <view class='content'><image class='content-img' src='../imgs/login.jpg' /></view>
+    <view class='operate-box'>
+      <view class='cancel' bindtap='onCancel'>暂不登录</view>
+      <view class='line'></view>
+      <view class='ok' bindtap='onOk'>立即登录</view>
+    </view>
+  </view>
+</view>

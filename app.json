@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/teacherList/teacherList",
+    "pages/courses/courses",
+    "pages/appointmentStatus/appointmentStatus",
+    "pages/appointment/appointment"
+  ],
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#007a49",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的预约"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#007a49",
+    "navigationBarTitleText": "上课吖",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,63 @@
+/* pages/appointmentStatus/appointmentStatus.wxss */
+.appointment-status .info-box {
+  padding: 20rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  position: relative;
+}
+.info-box .introduce {
+  display: inline-block;
+  /* width: 60vw; */
+  min-height: 100rpx;
+}
+.time-title {
+  padding: 20rpx;
+  font-size: 30rpx;
+  line-height: 2;
+  font-size: 600;
+}
+.appointment-status .portrait-box {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 20vw;
+  height: 20vw;
+}
+.portrait-box .portrait {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.appointment-status .btn-box {
+  position: fixed;
+  right: 0;
+  top: 800rpx;
+  display: flex;
+  justify-content: center;
+}
+.appointment-status .btn-box .van-button {
+  width: 80rpx;
+  height: 180rpx;
+}
+.time-table .van-cell__title,
+.time-table .van-cell__value ,
+.time-box .van-cell__title,
+.time-box .van-cell__value {
+  font-size: 30rpx;
+}
+.time-table {
+  padding: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.time-table .van-tag {
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+.calendar {
+  --calendar-height: 500px;
+}

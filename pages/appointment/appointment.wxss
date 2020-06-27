@@ -1,0 +1,9 @@
+/* pages/appointment/appointment.wxss */
+.appointment-container {
+  padding: 20rpx;
+}
+.btn-box {
+  padding-top: 40rpx;
+  display: flex;
+  justify-content: space-around;
+}

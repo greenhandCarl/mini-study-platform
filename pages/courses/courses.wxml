@@ -1,0 +1,13 @@
+<!--pages/courses/course.wxml-->
+<view class='courses-container'>
+  <van-cell
+    wx:for='{{courses}}'
+    wx:for-item='course'
+    wx:key='index'
+    title="{{course.name}}"
+    value="进入"
+    icon="orders-o"
+    data-type='{{course.code}}'
+    bindtap='goCourse'
+  />
+</view>

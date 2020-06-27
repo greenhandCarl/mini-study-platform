@@ -1,0 +1,65 @@
+<!--pages/appointment/appointment.wxml-->
+<view class='appointment-container'>
+  <van-action-sheet
+    show="{{ showAction }}"
+    title="联系方式"
+    actions="{{ actions }}"
+    bind:close="onActionClose"
+    bind:select="onActionSelect"
+    description="请选择联系方式"
+  />
+  <van-action-sheet
+    show="{{ showSubjectAction }}"
+    title="科目"
+    actions="{{ subjectActions }}"
+    bind:close="onSubjectActionClose"
+    bind:select="onSubjectActionSelect"
+    description="请选择科目"
+  />
+  <van-action-sheet
+    show="{{ showWeekAction }}"
+    title="星期"
+    actions="{{ weekActions }}"
+    bind:close="onWeekActionClose"
+    bind:select="onWeekActionSelect"
+    description="请选择星期"
+  />
+  <van-cell title="科目" is-link value="{{subject.name}}" arrow-direction="down" bindtap='onSubjectChange' />
+  <van-cell-group>
+    <van-field
+      value="{{ parentsInfo.grade }}"
+      required
+      clearable
+      label="年级"
+      placeholder="请输入年级"
+      data-item='grade'
+      bind:change="onParentsInfoChange"
+    />
+    <van-cell title="星期" is-link value="{{week.name}}" arrow-direction="down" bindtap='onWeekChange' />
+    <van-cell title="联系方式" is-link value="{{contactType.type}}" arrow-direction="down" bindtap='onContactTypeChange' />
+    <van-field
+      wx:if='{{contactType.value === 1}}'
+      value="{{ contact.phoneNumber }}"
+      required
+      clearable
+      label="手机号"
+      placeholder="请输入手机号"
+      data-item='phoneNumber'
+      bind:change="onContactChange"
+    />
+    <van-field
+      wx:if='{{contactType.value === 2}}'
+      value="{{ contact.wxNumber }}"
+      required
+      clearable
+      label="微信号"
+      placeholder="请输入微信号"
+      data-item='wxNumber'
+      bind:change="onContactChange"
+    />
+  </van-cell-group>
+  <view class='btn-box'>
+    <van-button type="primary" bindtap='onSubmit'>提交</van-button>
+  </view>
+  <van-toast id="van-toast" />
+</view>

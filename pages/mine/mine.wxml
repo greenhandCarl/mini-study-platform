@@ -1,0 +1,30 @@
+<!--pages/mine/mine.wxml-->
+<view class='apponitments-container'>
+  <view
+    class='apponitments-box'
+    wx:for='{{appointments}}'
+    wx:for-item='appointment'
+    wx:key='index'
+    data-teacher='{{appointment}}'
+    bindtap='goAppointStatus'
+  >
+    <view class='apponitment-item'>
+      <view class='info'>
+        <view class='avatar'>
+          <image wx:if="{{appointment.teacherAvatar}}" class='avatar-img' src='{{appointment.teacherAvatar}}' />
+          <image wx:else class='avatar-img' src='../../imgs/yihe.jpg' />
+        </view>
+        {{appointment.avatar}}
+        <view class='name'>{{appointment.teacherName}}</view>
+        <view class='subjectName'>{{appointment.subjectName}}</view >
+        <view class='time'>{{appointment.weekday || '周六'}}</view >
+      </view>
+      <view class='appont-icon-box'>预约中</view>
+    </view>
+    <!-- <van-cell-group>
+      <van-cell title="老师" value="{{appointment.teacherName}}" />
+      <van-cell title="科目" value="{{appointment.subjectName}}" />
+      <van-cell title="预约状态" value="预约中"  border="{{ false }}" />
+    </van-cell-group> -->
+  </view>
+</view>

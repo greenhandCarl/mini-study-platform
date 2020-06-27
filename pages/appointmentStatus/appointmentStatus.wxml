@@ -1,0 +1,31 @@
+<!--pages/appointmentStatus/appointmentStatus.wxml-->
+<view class='appointment-status'>
+  <view class='info-box'>
+      <view class='info'>
+        <view class='name'><van-icon name="manager-o" /> {{teacher.name}}（{{teacher.gender === 0 ? '男' : '女'}}）</view>
+        <view class='school'><van-icon name="label-o" /> {{teacher.education}} {{teacher.profession}}</view>
+        <view class='school'><van-icon name="label-o" /> {{teacher.college}}</view>
+        <view class='introduce'><van-icon name="edit" /> 自我描述：{{teacher.introduce}}</view>
+      </view>
+      <view class='portrait-box'>
+        <image class='portrait' src='{{teacher.avatar}}' />
+      </view>
+  </view>
+  <view class='time-title' wx-if='{{ext[0].startTime}}'><van-icon name='calender-o' /> 老师空闲时间</view>
+  <view class='time-table'>
+    <van-tag
+      wx-if='{{date.startTime}}'
+      round
+      type="success"
+      size='medium'
+      wx:for='{{ext}}'
+      wx:for-item='date'
+      wx:key='index'
+    >{{dateMap[date.weekDay]}}{{date.startTime}}-{{date.endTime}}</van-tag>
+  </view>
+  <view class='btn-box'>
+    <van-button type="primary" bindtap='goAppointment'>预约</van-button>
+    <!-- <van-button type="primary" wx:else>已预约</van-button> -->
+  </view>
+  <signPopup isShowSign='{{isShowSign}}' bindsetShowSign='setShowSign'></signPopup>
+</view>

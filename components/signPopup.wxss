@@ -1,0 +1,60 @@
+/* components/signPopup.wxss */
+.sign-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.sign-popup-container .sign-popup-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5vw;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70vw;
+  box-sizing: border-box;
+}
+.sign-popup-box .title {
+  font-size: 4vw;
+  text-align: center;
+  color: 020202;
+}
+.sign-popup-box .content {
+  margin-top: 5vw;
+  width: 42vw;
+  height: 31vw;
+}
+.sign-popup-box .content .content-img {
+  width: 100%;
+  height: 100%;
+}
+.sign-popup-box .operate-box {
+  margin-top: 3vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+.operate-box .cancel {
+  font-size: 3.8vw;
+  color: #858585;
+}
+.operate-box .line {
+  height: 3.8vw;
+  border-left: 1px solid #858585;
+}
+.operate-box .ok {
+  color: #0094e5;
+  font-size: 3.8vw;
+}

@@ -1,0 +1,28 @@
+<!--pages/teacherList/teacherList.wxml-->
+<view class='teacher-list-container'>
+  <view
+    wx:if='{{teacherList.length > 0}}'
+    class='box'
+    wx:for='{{teacherList}}'
+    wx:for-item='teacher'
+    wx:key='index'
+    data-teacher='{{teacher}}' bindtap='goAppointStatus'
+  >
+    <view class='teacher-box'>
+      <view class='portrait-box'>
+        <image wx:if="{{teacher.avatar}}" class='portrait' src='{{teacher.avatar}}' />
+        <image wx:else class='portrait' src='../../imgs/yihe.jpg' />
+        <!-- <view class='line'></view> -->
+      </view>
+      <view class='info'>
+        <view class='name'>{{teacher.name}}（{{teacher.gender === 0 ? '男' : '女'}}）</view>
+        <view class='school'>{{teacher.education}} {{teacher.profession}}</view>
+        <view class='introduce'>简介：{{teacher.introduce}}</view>
+      </view>
+      <view class='btn-box'>
+        <van-button type="primary">预约</van-button>
+      </view>
+    </view>
+  </view>
+  <view class='nodata-box' wx:if='{{teacherList.length === 0}}'><image class='nodata-img' src='../../imgs/nodata.gif' /></view>
+</view>

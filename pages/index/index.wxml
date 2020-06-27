@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='banner-container'>
+    <image class='banner' src='../../imgs/banner0.jpg' />
+  </view>
+  <view class='content-table'>
+    <view class='courses' data-type='{{courses[0].code}}' bindtap='goCourse'>
+      <view class='box'>
+        <view class='icon'>
+          <van-icon name='friends-o' color='#007a49' size='100rpx' />
+        </view>
+        <view class='text0'>{{courses[0].name}}</view>
+      </view>
+    </view>
+    <view class='courses' data-type='{{courses[1].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='todo-list-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[1].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[2].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='fire-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[2].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[3].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='coupon-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[3].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[4].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='send-gift-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[4].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[5].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='location-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[5].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[6].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='diamond-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[6].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[7].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='cluster-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[7].name}}</view>
+    </view>
+    <view class='courses' data-type='{{courses[8].code}}' bindtap='goCourse'>
+      <view class='icon'>
+        <van-icon name='flower-o' color='#007a49' size='100rpx' />
+      </view>
+      <view class='text0'>{{courses[8].name}}</view>
+    </view>
+  </view>
+  <view class='other-box'>
+    <image class='other-img' src='../../imgs/other.jpg' />
+  </view>
+  <signPopup isShowSign='{{isShowSign}}' bindsetShowSign='setShowSign'></signPopup>
+</view>

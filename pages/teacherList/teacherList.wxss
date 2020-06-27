@@ -1,0 +1,99 @@
+/* pages/teacherList/teacherList.wxss */
+.teacher-list-container {
+  position: relative;
+  padding: 4vw;
+}
+.teacher-list-container .box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 2.77vw;
+  padding-top: 3.33vw;
+  margin-top: 4.81vw;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 8rpx #ccc;
+}
+.teacher-list-container .nodata-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fbfbfb;
+}
+.nodata-box .nodata-img {
+  width: 100vw;
+  height: 75vw;
+}
+.teacher-box {
+  display: flex;
+  justify-content: flex-start;
+}
+.portrait-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3vw;
+  padding-right: 3.7vw;
+}
+.portrait-box .portrait {
+  width: 17.2vw;
+  height: 17.2vw;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.portrait-box .line {
+  width: 80%;
+  height: 10rpx;
+  background-color: #000;
+  border-radius: 5rpx;
+}
+.btn-box .van-button {
+  position: absolute;
+  right: 2.6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19.62vw;
+  height: 9.07vw;
+  line-height: 9.07vw;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+}
+.info {
+}
+.info .name {
+  color: #6a6a6a;
+  font-size: 34rpx;
+}
+.info .school {
+  padding: 0.1em 0;
+  color: #6a6a6a;
+  font-size: 30rpx;
+}
+.info .introduce {
+  color: #6a6a6a;
+  font-size: 30rpx;
+  width: 10em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.star-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.star-box .star {
+  height: 30rpx;
+  width: 30rpx;
+}

@@ -1,0 +1,55 @@
+/* pages/mine/mine.wxss */
+.apponitments-container {
+  padding: 4vw;
+}
+.apponitments-container .apponitments-box {
+  position: relative;
+  width: 100%;
+  padding: 3vw;
+  margin-top: 4.81vw;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 8rpx #ccc;
+}
+.apponitment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apponitment-item .avatar{
+  width: 60rpx;
+  height: 60rpx;
+}
+.apponitment-item .avatar .avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.apponitment-item .info {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30rpx;
+  align-items: center;
+}
+.apponitment-item .info .name,
+.apponitment-item .info .subjectName,
+.apponitment-item .info .time {
+  padding-left: 20rpx;
+}
+.apponitment-item .appont-icon-box {
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  /* background-color: #007a49; */
+  border-radius: 28rpx;
+  color: #007a49;
+}
+/* .apponitment-item .appont-icon-box .appoint-icon {
+  width: 100%;
+  height: 100%;
+} */
