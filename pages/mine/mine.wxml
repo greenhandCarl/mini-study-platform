@@ -1,6 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class='apponitments-container'>
   <view
+    wx:if='{{appointments.length && appointments.length > 0}}'
     class='apponitments-box'
     wx:for='{{appointments}}'
     wx:for-item='appointment'
@@ -27,4 +28,5 @@
       <van-cell title="预约状态" value="预约中"  border="{{ false }}" />
     </van-cell-group> -->
   </view>
+  <view class='nodata-box' wx:if='{{!appointments}}'><image class='nodata-img' src='https://20200508sky.oss-cn-shenzhen.aliyuncs.com/shangkeya/nodata.gif' /></view>
 </view>

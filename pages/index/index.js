@@ -1,5 +1,7 @@
 //index.js
 import { request } from '../../api/index.js'
+import { login, getSubjects } from '../../api/request.js'
+import { wxLogin } from '../../api/wxapi.js'
 
 //获取应用实例
 const app = getApp()
@@ -9,13 +11,30 @@ Page({
     courses: [],
     isShowSign: false
   },
-  onLoad: function (option) {
+  async onLoad (option) {
+    await this.initOpenId()
     this.initCourses()
   },
   onShow () {
     this.initSignPopup()
   },
   getUserInfo: function(e) {
+  },
+  async initOpenId () {
+    try {
+      const res = await wxLogin()
+      const result = await login({ code: res.code })
+      // 设置到global中 转驼峰
+      app.globalData.userInfo
+        ? app.globalData.userInfo = { ...app.globalData.userInfo, openId: result.openid }
+        : app.globalData.userInfo = { openId: result.openid }
+      // 设置到缓存中 不转驼峰
+      wx.setStorageSync('openid', result.openid)
+      return true
+    } catch (err) {
+      console.log('wxLogin err.errMsg', err.errMsg)
+      return Promise.reject(err)
+    }
   },
   setShowSign (e) {
     this.setData({ isShowSign: e.detail.isShowSign })
@@ -27,7 +46,7 @@ Page({
     }
   },
   initCourses () {
-    request({ url: '/subjects' }).then((res) => {
+    getSubjects().then((res) => {
       this.setData({courses: res.data})
     })
   },

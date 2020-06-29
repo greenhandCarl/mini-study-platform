@@ -171,7 +171,6 @@ Page({
       contactType,
       subjectName,
       subjectCode,
-      userId: 1,
       weekDay
     }
     console.log('data', data)

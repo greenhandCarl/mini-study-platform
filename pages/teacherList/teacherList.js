@@ -70,20 +70,6 @@ Page({
    */
   onLoad: function (options) {
     this.initTeacherList(options.type)
-    // switch (options.type) {
-    //   case 'subject001':
-    //     this.setData({teacherList: this.data.chineseList})
-    //     break
-    //   case 'subject002':
-    //     this.setData({teacherList: this.data.mathList})
-    //     break
-    //   case 'subject003':
-    //     this.setData({teacherList: this.data.engList})
-    //     break
-    //   default:
-    //     this.setData({teacherList: this.data.chineseList})
-    //     break
-    // }
   },
 
   /**

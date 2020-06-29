@@ -2,6 +2,18 @@
 .apponitments-container {
   padding: 4vw;
 }
+.apponitments-container .nodata-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fbfbfb;
+}
+.nodata-box .nodata-img {
+  width: 100vw;
+  height: 75vw;
+}
 .apponitments-container .apponitments-box {
   position: relative;
   width: 100%;

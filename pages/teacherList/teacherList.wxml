@@ -24,5 +24,5 @@
       </view>
     </view>
   </view>
-  <view class='nodata-box' wx:if='{{teacherList.length === 0}}'><image class='nodata-img' src='../../imgs/nodata.gif' /></view>
+  <view class='nodata-box' wx:if='{{teacherList.length === 0}}'><image class='nodata-img' src='https://20200508sky.oss-cn-shenzhen.aliyuncs.com/shangkeya/nodata.gif' /></view>
 </view>

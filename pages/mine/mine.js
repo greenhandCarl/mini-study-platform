@@ -1,5 +1,6 @@
 // pages/mine/mine.js
-import { request } from '../../api/index.js'
+import { getAppointments } from '../../api/request.js'
+
 const app = getApp()
 
 Page({
@@ -17,7 +18,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.initAppointments(this.data.currentPage)
   },
 
   /**
@@ -31,7 +31,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.initAppointments(this.data.currentPage)
+    this.initPageInfo()
+    this.initAppointments(1)
   },
 
   /**
@@ -63,7 +64,7 @@ Page({
     if (this.data.currentPage < this.data.totalPage) {
       const currentPage = this.data.currentPage + 1
       this.setData({ currentPage })
-      this.initAppointments(currentPage)
+      this.onTurnPage(currentPage)
     }
   },
 
@@ -82,20 +83,28 @@ Page({
     console.log('onTabItemTap')
   },
 
+  initPageInfo () {
+    this.setData({ currentPage: 1 })
+  },
+
   async initAppointments (currentPage) {
+    const res = await getAppointments({ currentPage })
+    this.setData({ appointments: res.data.dataList, totalPage: res.data.totalPage })
+  },
+
+  async onTurnPage (currentPage) {
     const { appointments = [] } = this.data
-    const res = await request({ url: `/user_appointment/1/appointments`, data: { currentPage } })
+    const res = await getAppointments({ currentPage })
     this.setData({ appointments: [...appointments, ...res.data.dataList], totalPage: res.data.totalPage })
-    console.log(this.data.appointments)
-    console.log('res', res)
   },
 
   goAppointStatus (e) {
     const teacher = e.currentTarget.dataset.teacher
-    console.log('e.currentTarget.dataset.teacher', e.currentTarget.dataset.teacher)
+    // console.log('e.currentTarget.dataset.teacher', e.currentTarget.dataset.teacher)
     // app.globalData.currentTeacher = e.currentTarget.dataset.teacher
     // console.log('app.globalData.currentTeacher', app.globalData.currentTeacher)
     // wx.navigateTo({ url: '/pages/appointmentStatus/appointmentStatus' })
+    // 只需要teacherId即可
     wx.navigateTo({ url: `/pages/appointmentStatus/appointmentStatus?teacherId=${teacher.teacherId}&appoint=1` })
   }
 })

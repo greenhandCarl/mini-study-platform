@@ -43,8 +43,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const ext = JSON.parse(app.globalData.currentTeacher.ext)
-    this.setData({teacher: app.globalData.currentTeacher, ext})
+    // const ext = JSON.parse(app.globalData.currentTeacher.ext)
+    // this.setData({teacher: app.globalData.currentTeacher})
   },
 
   /**

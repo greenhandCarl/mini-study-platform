@@ -1,5 +1,6 @@
 // components/signPopup.js
 import { wxLogin } from '../api/wxapi.js'
+import { login } from '../api/request.js'
 
 const app = getApp()
 
@@ -28,7 +29,14 @@ Component({
     async onOk () {
       try {
         const res = await wxLogin()
-        console.log('res.code', res.code)
+        const result = await login({ code: res.code })
+        // 设置到global中 转驼峰
+        app.globalData.userInfo
+          ? app.globalData.userInfo = { ...app.globalData.userInfo, openId: result.openid }
+          : app.globalData.userInfo = { openId: result.openid }
+        // 设置到缓存中 不转驼峰
+        wx.setStorageSync('openid', result.openid)
+        this.triggerEvent('setShowSign', { isShowSign: false }, {})
       } catch (err) {
         console.log('wxLogin err.errMsg', err.errMsg)
       }
